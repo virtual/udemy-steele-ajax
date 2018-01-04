@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Randomcatta</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" />
+  <style>
+    body {
+      padding: 1em;
+    }
+    #photo { min-height:50px}
+    img{ max-width: 100%; height: auto;}
+    figure { padding:0; margin:0;}
+    figcaption { padding: 4px 10px 8px;}
+    h1 small { font-size: 1rem; color:#585858; font-weight: normal}
+  </style>
+</head>
+<body>
+  <div class="ui container">
+    <h1 class="ui dividing header">Randomize your cats <small>—Hover to refresh</small></h1>
+      <div class="ui centered  card">
+        <div class="blurring dimmable image">
+            <div id="loading" class="ui active dimmer">
+                <div class="ui mini text loader">Loading</div>
+              </div>
+          <div class="ui dimmer transition hidden">
+            <div class="content">
+              <div class="center">
+                <button id="btn" class="ui inverted button blue">Randomize</button>
+              </div>
+            </div>
+          </div>
+          <figure><img id="photo" alt="cat photo">
+            <figcaption>Powered by https://cataas.com</figcaption>
+            </figure>
+
+        </div>
+    </div>
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+  <script src="random.js"></script>
+  <script>
+    $(document)
+      .ready(function() {
+        $('.special.card .image').dimmer({
+          on: 'hover'
+        }); 
+        $('.card .dimmer.transition')
+          .dimmer({
+            on: 'hover'
+          })
+        ;
+      })
+    ;
+    </script>
+</body>
+</html>
